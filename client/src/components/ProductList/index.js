@@ -6,7 +6,8 @@ import ProductItem from "../ProductItem";
 import { QUERY_PRODUCTS } from "../../utils/queries";
 import spinner from "../../assets/spinner.gif";
 
-import { useStoreContext } from "../../utils/GlobalState";
+// import { useStoreContext } from "../../utils/GlobalState";
+import { useDispatch, useSelector } from "react-redux";
 import { UPDATE_PRODUCTS } from "../../utils/actions";
 
 import { idbPromise } from "../../utils/helpers";
@@ -26,7 +27,12 @@ function ProductList() {
   //   );
   // }
 
-  const [state, dispatch] = useStoreContext();
+  // const [state, dispatch] = useStoreContext();
+
+  const state = useSelector((state) => {
+    return state;
+  });
+  const dispatch = useDispatch();
 
   const { currentCategory } = state;
 
