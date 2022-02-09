@@ -1,8 +1,6 @@
-// import React from "react";
 import React, { useEffect } from "react";
 import { useLazyQuery } from "@apollo/client";
 
-// import { useStoreContext } from "../../utils/GlobalState";
 import { useDispatch, useSelector } from "react-redux";
 import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from "../../utils/actions";
 import { idbPromise } from "../../utils/helpers";
@@ -14,15 +12,8 @@ import { QUERY_CHECKOUT } from "../../utils/queries";
 import { loadStripe } from "@stripe/stripe-js";
 
 const stripePromise = loadStripe("pk_test_TYooMQauvdEDq54NiTphI7jx");
-// import { useLazyQuery } from "@apollo/client";
-
-// import { useStoreContext } from "../../utils/GlobalState";
-// import { TOGGLE_CART } from "../../utils/actions";
-
-// import { useLazyQuery } from "@apollo/client";
 
 const Cart = () => {
-  // const [state, dispatch] = useStoreContext();
   const state = useSelector((state) => {
     return state;
   });
@@ -86,39 +77,6 @@ const Cart = () => {
   console.log(state);
 
   return (
-    // <div className="cart">
-    //   <div className="close" onClick={toggleCart}>
-    //     [close]
-    //   </div>
-    //   <h2>Shopping Cart</h2>
-    //   <div>
-    //     <CartItem
-    //       item={{
-    //         name: "Camera",
-    //         image: "camera.jpg",
-    //         price: 5,
-    //         purchaseQuantity: 3,
-    //       }}
-    //     />
-    //     <CartItem
-    //       item={{
-    //         name: "Soap",
-    //         image: "soap.jpg",
-    //         price: 6,
-    //         purchaseQuantity: 4,
-    //       }}
-    //     />
-
-    //     <div className="flex-row space-between">
-    //       <strong>Total: $0</strong>
-    //       {Auth.loggedIn() ? (
-    //         <button>Checkout</button>
-    //       ) : (
-    //         <span>(log in to check out)</span>
-    //       )}
-    //     </div>
-    //   </div>
-    // </div>
     <div className="cart">
       <div className="close" onClick={toggleCart}>
         [close]

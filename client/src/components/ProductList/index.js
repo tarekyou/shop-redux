@@ -6,29 +6,12 @@ import ProductItem from "../ProductItem";
 import { QUERY_PRODUCTS } from "../../utils/queries";
 import spinner from "../../assets/spinner.gif";
 
-// import { useStoreContext } from "../../utils/GlobalState";
 import { useDispatch, useSelector } from "react-redux";
 import { UPDATE_PRODUCTS } from "../../utils/actions";
 
 import { idbPromise } from "../../utils/helpers";
 
 function ProductList() {
-  // const { loading, data } = useQuery(QUERY_PRODUCTS);
-
-  // const products = data?.products || [];
-
-  // function filterProducts() {
-  //   if (!currentCategory) {
-  //     return products;
-  //   }
-
-  //   return products.filter(
-  //     (product) => product.category._id === currentCategory
-  //   );
-  // }
-
-  // const [state, dispatch] = useStoreContext();
-
   const state = useSelector((state) => {
     return state;
   });
@@ -38,14 +21,6 @@ function ProductList() {
 
   const { loading, data } = useQuery(QUERY_PRODUCTS);
 
-  // useEffect(() => {
-  //   if (data) {
-  //     dispatch({
-  //       type: UPDATE_PRODUCTS,
-  //       products: data.products,
-  //     });
-  //   }
-  // }, [data, dispatch]);]
   useEffect(() => {
     // if there's data to be stored
     if (data) {

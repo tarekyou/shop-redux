@@ -9,7 +9,6 @@ import {
   CLEAR_CART,
   TOGGLE_CART,
 } from "./actions";
-// import { useReducer } from "react";
 
 const defaultState = {
   products: [],
@@ -19,7 +18,6 @@ const defaultState = {
   cartOpen: false,
 };
 
-// export const rootReducer = (state = defaultState, action) => {
 const rootReducer = (state = defaultState, action) => {
   switch (action.type) {
     // if action type value is the value of `UPDATE_PRODUCTS`, return a new state object with an updated products array
@@ -97,7 +95,4 @@ const rootReducer = (state = defaultState, action) => {
   }
 };
 
-// export function useProductReducer(initialState) {
-//   return useReducer(reducer, initialState);
-// }
 export default rootReducer;

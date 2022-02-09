@@ -5,7 +5,6 @@ import { useQuery } from "@apollo/client";
 import { QUERY_PRODUCTS } from "../utils/queries";
 import spinner from "../assets/spinner.gif";
 
-// import { useStoreContext } from "../utils/GlobalState";
 import { useDispatch, useSelector } from "react-redux";
 
 import {
@@ -20,21 +19,6 @@ import Cart from "../components/Cart";
 import { idbPromise } from "../utils/helpers";
 
 function Detail() {
-  // const { id } = useParams();
-
-  // const [currentProduct, setCurrentProduct] = useState({});
-
-  // const { loading, data } = useQuery(QUERY_PRODUCTS);
-
-  // const products = data?.products || [];
-
-  // useEffect(() => {
-  //   if (products.length) {
-  //     setCurrentProduct(products.find((product) => product._id === id));
-  //   }
-  // }, [products, id]);
-
-  // const [state, dispatch] = useStoreContext();
   const state = useSelector((state) => {
     return state;
   });
@@ -48,16 +32,6 @@ function Detail() {
 
   const { products, cart } = state;
 
-  // useEffect(() => {
-  //   if (products.length) {
-  //     setCurrentProduct(products.find((product) => product._id === id));
-  //   } else if (data) {
-  //     dispatch({
-  //       type: UPDATE_PRODUCTS,
-  //       products: data.products,
-  //     });
-  //   }
-  // }, [products, data, dispatch, id]);
   useEffect(() => {
     // already in global store
     if (products.length) {
@@ -86,10 +60,6 @@ function Detail() {
   }, [products, data, loading, dispatch, id]);
 
   const addToCart = () => {
-    // dispatch({
-    //   type: ADD_TO_CART,
-    //   product: { ...currentProduct, purchaseQuantity: 1 },
-    // });
     const itemInCart = cart.find((cartItem) => cartItem._id === id);
 
     if (itemInCart) {
